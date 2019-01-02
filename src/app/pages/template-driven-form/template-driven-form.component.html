@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Hero Form</h1>
+  <form #form="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input [(ngModel)]="name" name="names" (blur)="lo(form)" #nameInput="ngModel" type="text" class="form-control" id="name" required>
+    </div>
+<span *ngIf="nameInput.invalid">Error in Name</span>
+    
+
+    <div class="form-group">
+      <label for="alterEgo">Alter Ego</label>
+      <input [value]="ego" type="text" class="form-control" id="alterEgo">
+    </div>
+    <input type="text" [formControl]="name" name="mkj">
+
+    <button type="submit" [disabled]="form.invalid" class="btn btn-success">Submit</button>
+
+  </form>
+</div>
